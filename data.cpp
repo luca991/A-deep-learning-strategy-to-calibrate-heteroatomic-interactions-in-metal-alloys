@@ -62,5 +62,7 @@ namespace data{
   int *atom_el1;
   //  vector<int> n_nl;
   int *n_nl;
+  vector<vector<double>> mat_fix;
+  vector<string> lattice_type;
   vector<int> n_cells_hcp;
 }

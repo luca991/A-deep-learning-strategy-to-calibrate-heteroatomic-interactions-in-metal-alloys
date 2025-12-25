@@ -1,6 +1,8 @@
 #ifndef DATA_H
 #define DATA_H
 
+#include<vector>
+#include<string>
 using namespace std;
 
 namespace data{
@@ -62,6 +64,8 @@ namespace data{
   extern int *atom_el1;
   //  extern vector<int> n_nl;
   extern int *n_nl;
+  extern vector<vector<double>> mat_fix;
+  extern vector<string> lattice_type;
   extern vector<int> n_cells_hcp;
 }
 #endif
