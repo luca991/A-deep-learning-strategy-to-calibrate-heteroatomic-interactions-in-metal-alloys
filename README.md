@@ -15,3 +15,8 @@ After the simulations are complete, if you want to calculate the mixing enthalpy
 ## Dissolution energy
 The *Impurity_energy* folder contains the code for energy of dissolution calculation and the files needed to run it. Run the command `make all` to compile the programme and the executable *impure* will be generated.
 For this programme too, files *leggi.in* and *potential.in*, as defined for MC simulations, must be located in the same folder where *impure* is executed. *impure* calculates the two dissolution energies and saves them in a file.
+
+## Dataset
+In *Dataset* folder the dataset used to train the Neural Networks is present with the name *data_ML_article.dat*. This file contains, for each simulated system, the potential parameters, mixing enthalpies, lattice parameters and dissolution energies.
+
+## NN training
