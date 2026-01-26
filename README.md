@@ -6,7 +6,12 @@ In this repository all the programs and scripts used to perform the calculation 
 The *MC* folder contains the code for Monte Carlo simulations and the files needed to run it. To compile, simply run the command `make all` and the executable *Unit_cell* will be generated. When run, it will perform a Monte Carlo simulation. To run *Unit_cell*, three other files must be present in the same folder:
   - *leggi.in*: defines the MC simulation setup. Not all lines in this file are used by this programme (lines 3 and 7 are not used)
   - *potential.in*: in this file, the potential parameters are defined. In line 3, *lattice_type_El1* and *lattice_type_El2* are replaced with the lattice of the two pure metals (hcp, bcc, fcc) and the values of the relative parameters are replaced.
-  - *cell_in_#.in*: are the files containing the initial configurations to be simulated. There is one file for each configuration. The # must be replaced with the composition of the system in terms of the first element, as defined in line 6 of *leggi.in*.
+  - *cell_in_#.in*: are the files containing the initial configurations to be simulated. There is one file for each configuration. The # must be replaced with the composition of the system in terms of the first element, as defined in line 6 of *leggi.in*. These files have to be in the following format:
+
+    > 864  
+    > Lattice=" L_xx L_xy L_xz L_yx L_yy L_yz L_zx L_zy L_zz " Properties=species:S:1:pos:R:3  
+    > El	x y z  
+    > El	x y z
 
 The *Unit_cell* programme can then be started with `./Unit_cell #`, where the # in this case is an index for enumerating the simulations.
 
@@ -23,3 +28,8 @@ In *Dataset* folder the dataset used to train the Neural Networks is present wit
 *NN_training* contains the Python scripts for training the neural networks. Each programme trains the neural network of a physical quantity. 
 To run these programmes, you need to have the dataset (located in folder *Dataset* and named *data_ML_article.dat*) and the file with the extreme values for each quantity (*min_max_values.dat*) in the same folder.
 Folder *NN_training* also contains the NNs trained by us that were used in the next step. These are identified by the name of the quantity they predict and have the extension *.h5*.
+
+## Minimization algorithms
+The *Minimization* folder contains the algorithms that follow local minimisation (see section 3.3 of the article). There are two programmes, one for systems with positive mixing enthalpy (*minimization_positive_H_mix.py*) and another for systems with negative mixing enthalpy (*minimization_negative_H_mix.py*). 
+In order to run, they must be located in the same folder as the neural networks and the *min_max_values.dat* file to be used, and the *Pure_elements.dat* and *Byn_prop_resc.dat* files containing the data for pure metals and alloys respectively must also be present. 
+To run the programmes, launch the `python minimization_positive_H_mix.py El1El2` (or `python minimization_negative_H_mix.py El1El2`) command, where El1 and El2 are the symbols of the metals that form the alloy and must be in the order used in the *Byn_prop_resc.dat* file.
