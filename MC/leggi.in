@@ -1,0 +1,27 @@
+Monte Carlo program: file of the parameters for the code
+				#Potential file
+				#Type of lattice (coiche between: f->fcc, h->hcp, b->bcc)
+				#Number unit cell per edge (number of atoms of the edge of the lattice fcc and bcc)
+		        #Number unit cell per edge (x, y, z direction for hcp lattice)
+			    #% of the first element
+				#Initial configuration (o = ordered, r = random)
+###################################################################
+Monte Carlo parameters
+				#MC steps
+				#Temperature (K)
+				#pbc (1 = yes, 0 = no)
+				#seed
+				#Max radius for shake move
+                #Shell thickness of sphere NL
+###################################################################
+Selection of MC moves (write the percentage for each type of move)
+				#Shake
+				#Exchange random
+				#Exchange weighted
+				#Change size
+###################################################################
+Output parameters
+				#Name of the output file for the lattice images (is by default in the format .xyz)
+				#Name of the output file for the data (is by default in the format .dat)
+				#Write atom position files (yes or no (y/n))
+				#Every how many MC steps acquire the image
