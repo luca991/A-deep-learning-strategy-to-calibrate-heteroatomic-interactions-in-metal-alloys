@@ -19,4 +19,6 @@ For this programme too, files *leggi.in* and *potential.in*, as defined for MC s
 ## Dataset
 In *Dataset* folder the dataset used to train the Neural Networks is present with the name *data_ML_article.dat*. This file contains, for each simulated system, the potential parameters, mixing enthalpies, lattice parameters and dissolution energies.
 
-## NN training
+## Neural Network training
+*NN_training* contains the Python scripts for training the neural networks. Each programme trains the neural network of a physical quantity. 
+To run these programmes, you need to have the dataset (located in folder *Dataset* and named *data_ML_article.dat*) and the file with the extreme values for each quantity (*min_max_values.dat*) in the same folder.
