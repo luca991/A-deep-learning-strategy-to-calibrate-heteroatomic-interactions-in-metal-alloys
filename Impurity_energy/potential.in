@@ -1,0 +1,19 @@
+# INPUT PARAMETRIZATION FOR MC CODE
+# METALS
+El1	El2	lattice_type_El1	lattice_type_El2
+####### El1El1 ( ### ), El2El2 ( ### ), #run ( ### ) #########
+# PARAMETRIZATION OF El1-El1, El2-El2, El1-El2 INTERACTION
+p_El1El1    p_El2El2    p_El1El2			p
+q_El1El1    q_El2El2    q_El1El2			q
+A_El1El1    A_El2El2    A_El1El2			A
+xi_El1El1    xi_El2El2    xi_El1El2			xi
+############################################################################
+# OTHER METAL PROPERTIES
+Ec_El1El1    Ec_El2El2	 	 Cohesive energy(eV)
+r0_El1El1    r0_El2El2    r0_El1El2			r0
+m_El1El1    m_El2El2	 	 Mass
+############################################################################
+# CUTOFF_START AND CUTOFF_END [Angstrom]
+rc1_El1El1  rc2_El1El1			El1-El1
+rc1_El2El2  rc2_El2El2			El2-El2
+rc1_El1El2  rc2_El1El2			El1-El2
