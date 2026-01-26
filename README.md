@@ -13,3 +13,5 @@ The *Unit_cell* programme can then be started with `./Unit_cell #`, where the # 
 After the simulations are complete, if you want to calculate the mixing enthalpy, you can use the Python code *calc_mix_enthalpy.py*, which, starting from the results of *Unit_cell*, calculates the mixing enthalpy for each simulated composition. In this case, the two pure systems must also be simulated.
 
 ## Dissolution energy
+The *Impurity_energy* folder contains the code for energy of dissolution calculation and the files needed to run it. Run the command `make all` to compile the programme and the executable *impure* will be generated.
+For this programme too, files *leggi.in* and *potential.in*, as defined for MC simulations, must be located in the same folder where *impure* is executed. *impure* calculates the two dissolution energies and saves them in a file.
