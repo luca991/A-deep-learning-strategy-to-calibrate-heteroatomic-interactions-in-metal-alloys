@@ -1,6 +1,6 @@
 # A deep learning strategy to calibrate heteroatomic interactions in metal alloys
 
-In this repository all the programs and scripts used to perform the calculation reported in "A deep learning strategy to calibrate heteroatomic interactions in metal alloys" are present.
+In this repository, programs, scripts and datset used to perform the calculation reported in "A deep learning strategy to calibrate heteroatomic interactions in metal alloys" are present.
 
 ## Monte Carlo simulations
 The *MC* folder contains the code for Monte Carlo simulations and the files needed to run it. To compile, simply run the command `make all` and the executable *Unit_cell* will be generated. When run, it will perform a Monte Carlo simulation. To run *Unit_cell*, three other files must be present in the same folder:
