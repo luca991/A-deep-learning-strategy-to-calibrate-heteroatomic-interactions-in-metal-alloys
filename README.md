@@ -43,5 +43,5 @@ Folder *NN_training* also contains the NNs trained by us that were used in the n
 
 ## Minimization algorithms
 The *Minimization* folder contains the algorithms that follow local minimisation (see section 3.3 of the article). There are two programmes, one for systems with positive mixing enthalpy (*minimization_positive_H_mix.py*) and another for systems with negative mixing enthalpy (*minimization_negative_H_mix.py*). 
-In order to run, they must be located in the same folder as the neural networks and the *min_max_values.dat* file to be used, and the *Pure_elements.dat* and *Byn_prop_resc.dat* files containing the data for pure metals and alloys respectively must also be present. 
+In order to run, they must be located in the same folder as the neural networks (*.h5* files) and the *min_max_values.dat* file to be used, and the *Pure_elements.dat* and *Byn_prop_resc.dat* files containing the data for pure metals and alloys respectively must also be present. 
 To run the programmes, launch the `python minimization_positive_H_mix.py El1El2` (or `python minimization_negative_H_mix.py El1El2`) command, where El1 and El2 are the symbols of the metals that form the alloy and must be in the order used in the *Byn_prop_resc.dat* file.
