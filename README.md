@@ -25,7 +25,10 @@ The *Impurity_energy* folder contains the code for energy of dissolution calcula
 For this programme too, files *leggi.in* and *potential.in*, as defined for MC simulations, must be located in the same folder where *impure* is executed. *impure* calculates the two dissolution energies and saves them in a file.
 
 ## Dataset
-In *Dataset* folder the dataset used to train the Neural Networks is present with the name *data_ML_article.dat*. This file contains, for each simulated system, the potential parameters, mixing enthalpies, lattice parameters and dissolution energies.
+In *Dataset* folder the dataset used to train the Neural Networks is present with the name *data_ML_article.dat*. This file contains, for each fictitious system:
+  ddd
+  dd
+, the potential parameters, mixing enthalpies, lattice parameters and dissolution energies.
 
 ## Neural Network training
 *NN_training* contains the Python scripts for training the neural networks. Each programme trains the neural network of a physical quantity. 
