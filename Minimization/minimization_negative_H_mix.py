@@ -193,17 +193,17 @@ n_m = 15
 
 # Import NN
 
-Hmix5 = load_model("model_test_1_best_Hmix5.h5")      
+Hmix5 = load_model("H_mix_5.h5")      
 
-Hmix95 = load_model("model_test_1_best_Hmix95.h5")   
+Hmix95 = load_model("H_mix_95.h5")   
 
-latt_5= load_model("model_test_1_best_latt_par_5.h5")  
+latt_5= load_model("latt_par_5.h5")  
 
-latt_95= load_model("model_test_1_best_latt_par_95.h5") 
+latt_95= load_model("latt_par_95.h5") 
 
-Hmix50 = load_model("model_test_1_best_Hmix50.h5")   
+Hmix50 = load_model("H_mix_50.h5")   
 
-latt_50= load_model("model_test_1_best_latt_par_50.h5") 
+latt_50= load_model("latt_par_50.h5") 
 
 label_encoder = LabelEncoder()
 
