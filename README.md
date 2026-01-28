@@ -22,6 +22,7 @@ After the simulations are complete, if you want to calculate the mixing enthalpy
 
 ## Dissolution energy
 The *Impurity_energy* folder contains the code for energy of dissolution calculation and the files needed to run it. Run the command `make all` to compile the programme and the executable *impure* will be generated.
+
 For this programme too, files *leggi.in* and *potential.in*, as defined for MC simulations, must be located in the same folder where *impure* is executed. *impure* calculates the two dissolution energies and saves them in a file.
 
 ## Dataset
@@ -38,11 +39,16 @@ In *Dataset* folder the dataset used to train the Neural Networks is present wit
 
 ## Neural Network training
 *NN_training* contains the Python scripts for training the neural networks. Each programme trains the neural network of a physical quantity. 
+
 To run these programmes, you need to have the dataset (located in folder *Dataset* and named *data_ML_article.dat*) and the file with the extreme values for each quantity (*min_max_values.dat*) in the same folder.
+
 *min_max_values.dat* contains the extreme values within which neural networks are to be trained for each feature of the dataset.
+
 Folder *NN_training* also contains the NNs trained by us that were used in the next step. These are identified by the name of the quantity they predict and have the extension *.h5*.
 
 ## Minimization algorithms
 The *Minimization* folder contains the algorithms that follow local minimisation (see section 3.3 of the article). There are two programmes, one for systems with positive mixing enthalpy (*minimization_positive_H_mix.py*) and another for systems with negative mixing enthalpy (*minimization_negative_H_mix.py*). 
+
 In order to run, they must be located in the same folder as the neural networks (*.h5* files) and the *min_max_values.dat* file to be used, and the *Pure_elements.dat* and *Byn_prop_resc.dat* files containing the data for pure metals and alloys respectively must also be present. 
+
 To run the programmes, launch the `python minimization_positive_H_mix.py El1El2` (or `python minimization_negative_H_mix.py El1El2`) command, where El1 and El2 are the symbols of the metals that form the alloy and must be in the order used in the *Byn_prop_resc.dat* file.
