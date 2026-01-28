@@ -1,0 +1,19 @@
+# INPUT PARAMETRIZATION FOR MC CODE
+# METALS
+El1	El2	fcc	fcc
+####### El1El1 ( run_24655 ), El2El2 ( 3_129 ), #run ( run_1 ) #########
+# PARAMETRIZATION OF El1-El1, El2-El2, El1-El2 INTERACTION
+12.765	13.6396	13.427			p
+4.45554	3.57299	4.34393			q
+0.183148	0.129735	0.233663			A
+1.79784	1.65487	1.24877			xi
+############################################################################
+# OTHER METAL PROPERTIES
+0	0	 	 Cohesive energy(eV)
+2.88269	2.20857	2.25755			r0
+168.683	48.6964	 	 Mass
+############################################################################
+# CUTOFF_START AND CUTOFF_END [Angstrom]
+4.99297	5.76538			El1-El1
+3.82536	4.41714			El2-El2
+3.9102	4.51511			El1-El2
