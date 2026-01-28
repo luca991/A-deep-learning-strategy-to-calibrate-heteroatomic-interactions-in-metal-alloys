@@ -3,7 +3,11 @@
 In this repository, programs, scripts and datset used to perform the calculation reported in "A deep learning strategy to calibrate heteroatomic interactions in metal alloys" are present.
 
 ## Monte Carlo simulations
-The *MC* folder contains the code for Monte Carlo simulations and the files needed to run it. To compile, simply run the command `make all` and the executable *Unit_cell* will be generated. When run, it will perform a Monte Carlo simulation. To run *Unit_cell*, three other files must be present in the same folder:
+The *MC* folder contains the code for Monte Carlo simulations and the files needed to run it. 
+
+To compile the code, simply run the command `make all` and the executable *Unit_cell* will be generated. When run, it will perform a Monte Carlo simulation. 
+
+To run *Unit_cell*, three other files must be present in the same folder:
   - *leggi.in*: defines the MC simulation setup. Not all lines in this file are used by this programme (lines 3 and 7 are not used). *leggi_example.in* is an example of how to fill *leggi.in*
   - *potential.in*: in this file, the potential parameters are defined. The parameters related to the first element (El1) are named with '_El1El1', similarly for the second element (EL2) with '_El2El2', while the parameters related to the mixed interactions are named with '_El1El2'. In line 3, *lattice_type_El1* and *lattice_type_El2* are replaced with the lattice of the two pure metals (hcp, bcc, fcc) and the values of the relative parameters are replaced. *potential_example.in* is an example of how to fill *potential.in*
   - *cell_in_#.in*: are the files containing the initial configurations to be simulated. The code needs of one file for each configuration. The # must be replaced with the composition percentage of the system in terms of the first element, as defined in line 6 of *leggi.in*, for example if the the alloy is $El1_{0.6}El2_{0.4}$ the file name will be *cell_in_60.in*. These files have to be in the `.xyz` format, as follow:
@@ -28,9 +32,9 @@ For this programme too, files *leggi.in* and *potential.in*, as defined for MC s
 ## Dataset
 In *Dataset* folder the dataset used to train the Neural Networks is present with the name *data_ML_article.dat*. This file contains, for each fictitious system:
 
-  - A_00, xi_00, p_00, q_00, r0_00: potential parameters related to the first element (_El1El1 parameters in *leggi.in*)
-  - A_11, xi_11, p_11, q_11, r0_11: potential parameters related to the second element (_El2El2 parameters in *leggi.in*)
-  - A_01, xi_01, p_01, q_01, r0_01: potential parameters related to the mixed interaction (_El1El2 parameters in *leggi.in*)
+  - A_00, xi_00, p_00, q_00, r0_00: potential parameters related to the first element (_El1El1 parameters in *potential.in*)
+  - A_11, xi_11, p_11, q_11, r0_11: potential parameters related to the second element (_El2El2 parameters in *potential.in*)
+  - A_01, xi_01, p_01, q_01, r0_01: potential parameters related to the mixed interaction (_El1El2 parameters in *potential.in*)
   - LS_0, LS_1: lattice structures of El1 and El2 respectively
   - T: simulation temperature
   - H_mix_#: mixing enthalpy at differen compositions of the alloy (# = 5, 50, 95)
@@ -38,7 +42,7 @@ In *Dataset* folder the dataset used to train the Neural Networks is present wit
   - D_Es_10, D_Es_01: the impurity energies, with the main text notation $\Delta E^{s}\_{El2\rightarrow El1}$ and $\Delta E^{s}\_{El1\rightarrow El2}$ respectively.
 
 ## Neural Network training
-*NN_training* contains the Python scripts for training the neural networks. Each programme trains the neural network of a physical quantity. 
+*NN_training* contains the Python scripts for training the neural networks. Each programme trains the neural networks of a physical quantity. 
 
 To run these programmes, you need to have the dataset (located in folder *Dataset* and named *data_ML_article.dat*) and the file with the extreme values for each quantity (*min_max_values.dat*) in the same folder.
 
@@ -47,8 +51,8 @@ To run these programmes, you need to have the dataset (located in folder *Datase
 Folder *NN_training* also contains the NNs trained by us that were used in the next step. These are identified by the name of the quantity they predict and have the extension *.h5*.
 
 ## Minimization algorithms
-The *Minimization* folder contains the algorithms that follow local minimisation (see section 3.3 of the article). There are two programmes, one for systems with positive mixing enthalpy (*minimization_positive_H_mix.py*) and another for systems with negative mixing enthalpy (*minimization_negative_H_mix.py*). 
+The *Minimization* folder contains the algorithms that perform local minimisations (see section 3.3 of the article). There are two programmes, one for systems with positive mixing enthalpy (*minimization_positive_H_mix.py*) and another for systems with negative mixing enthalpy (*minimization_negative_H_mix.py*). 
 
-In order to run, they must be located in the same folder as the neural networks (*.h5* files) and the *min_max_values.dat* file to be used, and the *Pure_elements.dat* and *Byn_prop_resc.dat* files containing the data for pure metals and alloys respectively must also be present. 
+In order to run these programmes, they must be located in the same folder as the neural networks (*.h5* files), the *min_max_values.dat* file to be used. The *Pure_elements.dat* and *Byn_prop_resc.dat* files containing the data for pure metals and alloys respectively must also be present. 
 
 To run the programmes, launch the `python minimization_positive_H_mix.py El1El2` (or `python minimization_negative_H_mix.py El1El2`) command, where El1 and El2 are the symbols of the metals that form the alloy and must be in the order used in the *Byn_prop_resc.dat* file.
