@@ -32,10 +32,9 @@ In *Dataset* folder the dataset used to train the Neural Networks is present wit
   - A_01, xi_01, p_01, q_01, r0_01: potential parameters related to the mixed interaction (_El1El2 parameters in *leggi.in*)
   - LS_0, LS_1: lattice structures of El1 and El2 respectively
   - T: simulation temperature
-  - H_mix_#: mixing enthalpy at differen composition of the alloy (# = 5, 50, 95)
-  - latt_par_#: lattice parameter at differen composition of the alloy (# = 5, 50, 95) 
-
-, the potential parameters, mixing enthalpies, lattice parameters and dissolution energies.
+  - H_mix_#: mixing enthalpy at differen compositions of the alloy (# = 5, 50, 95)
+  - latt_par_#: lattice parameter at differen compositions of the alloy (# = 5, 50, 95) 
+  - D_Es_10, D_Es_01: the impurity energies, with the main text notation $\Delta E^{s}\_{El2\rightarrow El1}$ and $\Delta E^{s}\_{El1\rightarrow El2}$ respectively.
 
 ## Neural Network training
 *NN_training* contains the Python scripts for training the neural networks. Each programme trains the neural network of a physical quantity. 
