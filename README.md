@@ -26,8 +26,15 @@ For this programme too, files *leggi.in* and *potential.in*, as defined for MC s
 
 ## Dataset
 In *Dataset* folder the dataset used to train the Neural Networks is present with the name *data_ML_article.dat*. This file contains, for each fictitious system:
-  ddd
-  dd
+
+  - A_00, xi_00, p_00, q_00, r0_00: potential parameters related to the first element (_El1El1 parameters in *leggi.in*)
+  - A_11, xi_11, p_11, q_11, r0_11: potential parameters related to the second element (_El2El2 parameters in *leggi.in*)
+  - A_01, xi_01, p_01, q_01, r0_01: potential parameters related to the mixed interaction (_El1El2 parameters in *leggi.in*)
+  - LS_0, LS_1: lattice structures of El1 and El2 respectively
+  - T: simulation temperature
+  - H_mix_#: mixing enthalpy at differen composition of the alloy (# = 5, 50, 95)
+  - latt_par_#: lattice parameter at differen composition of the alloy (# = 5, 50, 95) 
+
 , the potential parameters, mixing enthalpies, lattice parameters and dissolution energies.
 
 ## Neural Network training
